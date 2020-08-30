@@ -8,26 +8,23 @@
 local shodan_throttle_req = 1
 local shodan_throttle_time = 1000
 
-local shodan_api_url = "https://api.shodan.io"
-local shodan_api_port_uri = "/shodan/host/"
-
-
+local shodan_api_url = "https://api.shodan.io/shodan/host/"
 
 
 function run(arg)
     debug('Getting shodan api-key')
     creds = keyring('shodan')[1]['secret_key']
     if last_err() then return end
-
     debug('Shodan api-key ' .. creds)
 
-    debug('Sending request to host ' .. arg['value'])
+    shodan_request_uri = shodan_api_url .. arg['value']
+    debug('Sending request to host ' .. shodan_request_uri)
     session = http_mksession()
     req = http_request(session, 'GET',
-                                shodan_api_url .. shodan_api_port_uri .. arg['value'] .. '?key=' .. creds, {})
+                                shodan_request_uri, {query={key=creds}})
 
 
-    debug('Extracting ports for host ' .. arg['value'])
+    debug('Extracting ports from host ' .. arg['value'])
     data = http_fetch_json(req)
     if last_err() then return end
 
