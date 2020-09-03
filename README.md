@@ -14,3 +14,17 @@ sn0int-modules on  feature/add-shodan-ports [!] via ·limakzi took 46s 558ms 
 (.venv)
 sn0int-modules on 
 ```
+
+## securitytrails-subdomains
+
+- Scans subdomains in SecurityTrails
+
+```
+sn0int-modules on  feature/add-security-trails [✘!?] via ·limakzi took 7s 238ms ⇣77% ➜ sn0int -w sysdogs-com run -f securitytrails-subdomains.lua
+[*] "sysdogs.com"                                     : Adding subdomain "autodiscover"
+[*] "sysdogs.com"                                     : Adding subdomain "ssdgs-dev"
+[*] "sysdogs.com"                                     : Adding subdomain "www"
+[+] Finished anonymous/securitytrails-subdomains
+(.venv)
+sn0int-modules on 
+```
