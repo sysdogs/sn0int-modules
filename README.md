@@ -5,11 +5,9 @@
 - Scans shodan for open-ports.
 
 ```
-sn0int-modules on  feature/add-shodan-ports [!] via ·limakzi took 46s 558ms ⇣24% ➜ sn0int -w test run -f shodan-ports.lua
-[*] "1.1.1.1"                                         : "Getting shodan api-key"
-[*] "1.1.1.1"                                         : "Extracting ports from host 1.1.1.1"
-[*] "1.1.1.1"                                         : "Shodan - waiting for rate limiting"
-[*] "1.1.1.1"                                         : "sn0int -- adding port udp/53"
+sn0int-modules on  feature/add-security-trails via ·limakzi took 14s 503ms ⇣29% ➜ sn0int -w test run -f shodan-ports.lua
+[*] "1.1.1.1"                                         : Adding port "udp/1.1.1.1:53"
+[*] "1.1.1.1"                                         : Adding port "tcp/1.1.1.1:80"
 [+] Finished anonymous/shodan-ports
 (.venv)
 sn0int-modules on 
