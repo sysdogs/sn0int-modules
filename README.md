@@ -16,7 +16,6 @@ sn0int-modules on 
 ```
 
 ## securitytrails-subdomains
-:q
 
 - Scans subdomains in SecurityTrails
 
