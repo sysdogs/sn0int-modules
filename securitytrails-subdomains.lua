@@ -17,11 +17,11 @@ function run(arg)
     if last_err() then return end
     debug('SecurityTrails APIKEY ' .. creds)
 
-    security_trails_request_uri = security_trails_api_url .. arg['value']
+    security_trails_request_uri = security_trails_api_url .. arg['value'] .. "/subdomains"
     debug('Sending request to host ' .. security_trails_request_uri)
     session = http_mksession()
     req = http_request(session, 'GET',
-                                security_trails_request_uri .. "/subdomains", 
+                                security_trails_request_uri,
                                 {query={apikey=creds,children_only="false"},
                                  headers={accept="application/json"}})
 
