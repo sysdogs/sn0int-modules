@@ -4,15 +4,17 @@
 -- License: MIT
 
 function run(arg)
-    build_files = {'README.md',
-                   'README',
+    build_files = {'README',
+                   'README.md',
+                   '.ci.env',
+                   '.travis.yml',
+                   '.gitlab-ci.yml',
                    'Jenkinsfile',
                    'bitbucket-pipelines.yml',
-                   '.gitlab-ci.yml',
                    'Makefile',
                    'Dockerfile',
-                   'docker-compose.yaml',
-                   'docker-compose.yml'}
+                   'docker-compose.yml',
+                   'docker-compose.yaml'}
 
     for i=1, #build_files do
       url = url_join(arg['value'], build_files[i])
